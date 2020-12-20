@@ -1,4 +1,4 @@
-class updateNumbers{
+class TempTracker{
     constructor(){
         this.min = Number.POSITIVE_INFINITY;
         this.max = 0;
