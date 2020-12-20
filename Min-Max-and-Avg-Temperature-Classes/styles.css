@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+:root{
+    --background-right : #e27d60;
+    --background-left : #e27c60e0;
+    --border : #e8a87c;
+    --shadow : 2px 2px 2px rgb(95, 95, 95);
+}
+
+body{
+    background: linear-gradient(#85dcb2, #41b3a3);
+    padding:0px;
+    margin:0px;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins',sans-serif;
+}
+
+#flex{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#result{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 30vw;
+    justify-content: space-evenly ;
+}
+
+#input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    width: 30vw;
+}
+
+#entries{
+    width: inherit;
+}
+
+#entries div{
+    display: flex;
+    margin-bottom: 2vmin;
+    justify-content: center;
+}
+
+#entries div input{
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 3vh;
+    width: 70%;
+    height: 5vh;
+    margin-right: 2vmin;
+}
+
+#entries div button{
+    margin-left: 0.25vmin;
+    border-radius: 3px;
+    width: 5vmin;
+    height: 5vh;
+    font-size: 2vmin;
+    border: var(--border) solid 2px;
+    background-color: var(--background-left);
+    box-shadow: var(--shadow);
+}
+
+#controls{
+    display: flex;
+}
+
+#controls button{
+    height: 40px;
+    margin-left : auto;
+    margin-right: auto;
+    width: 12vw;
+    font-size: large;
+    background-color: var(--background-left);
+    border-radius: 1vh;
+    border : var(--border) solid 2px;
+    box-shadow: var(--shadow);
+}
+
+#result > div{
+    padding-top: 2vmin;
+    margin: 0px auto;
+    height: 15vmin;
+    width: 70%;
+    font-size: 4vmin;
+    text-align: center;
+    border : var(--border) solid 2px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: var(--shadow);
+}
+
+#minval{
+    margin: 0px auto;
+    width: 70%;
+    border-radius: 10px;
+    background-color: var(--background-right);
+    box-shadow: var(--shadow);
+}
+
+#maxval{
+    margin: 0px auto;
+    width: 70%;
+    background-color: var(--background-right);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+#avgval{
+    margin: 0px auto;
+    width: 70%;
+    background-color: var(--background-right);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+header{
+    text-align: center;
+    font-size: 5vmin;
+    padding-top: 3vmin;
+}
+
+footer{
+    text-align: center;
+    font-size: 2vmin;
+}
