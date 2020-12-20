@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/*Style guide for web app*/
 :root{
     --background-right : #e27d60;
     --background-left : #e27c60e0;
@@ -17,6 +19,7 @@ body{
 
 #flex{
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: space-evenly;
 }
@@ -129,3 +132,9 @@ footer{
     text-align: center;
     font-size: 2vmin;
 }
+
+@media screen and (min-width: 480px) {
+    #flex {
+      flex-direction: row;
+    }
+  }

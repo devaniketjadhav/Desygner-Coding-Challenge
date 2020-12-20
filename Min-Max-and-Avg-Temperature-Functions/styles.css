@@ -129,3 +129,9 @@ footer{
     text-align: center;
     font-size: 2vmin;
 }
+
+@media screen and (min-width: 480px) {
+    #flex {
+      flex-direction: row;
+    }
+  }
