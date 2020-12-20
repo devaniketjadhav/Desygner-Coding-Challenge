@@ -5,42 +5,9 @@ class TempTracker{
         this.avg = 0;
         this.count = 0;
     }
-
-    //getter method for min
-    get getMin(){
-        return this.min;
-    }
-    //getter method for max
-    get getMax(){
-        return this.max;
-    }
-    //getter method for count
-    get getCount(){
-        return this.count;
-    }
-    //getter method for avg
-    get getAvg(){
-        return this.avg;
-    }
-    //setter method for min
-    set setMin(min){
-        this.min = min;
-    }
-    //setter method for max
-    set setMax(max){
-        this.max = max;
-    }
-    //setter method for avg
-    set setAvg(avg){
-        this.avg = avg;
-    }
-    //setter method for count
-    set setCount(count){
-        this.count = count;
-    }
 }
 
-var update = new updateNumbers();
+var update = new TempTracker();
 var submit = document.getElementById('submit');
 var reset = document.getElementById('reset');
 
@@ -73,10 +40,10 @@ submit.onclick = function(){
 //reset onclick event to reset min, max, avg and count values
 //passing pseudo value of 0 for min whereas it is set to positive infinity
 reset.onclick = function(){
-    update.setMin = Number.POSITIVE_INFINITY;
-    update.setMax = 0;
-    update.setAvg = 0;
-    update.setCount = 0;
+    update.min = Number.POSITIVE_INFINITY;
+    update.max = 0;
+    update.avg = 0;
+    update.count = 0;
     changingNumbers(0);
 }
 
@@ -110,19 +77,19 @@ function notANumber(values){
 function updateArray(arr){
     //sorting array in ascending order to get min and max
     arr.sort(function(a,b){return a-b});
-    if(update.getMin > arr[0]){
-        update.setMin = arr[0];
+    if(update.min > arr[0]){
+        update.min = arr[0];
     }
-    if(update.getMax < arr[arr.length - 1]){
-        update.setMax = arr[arr.length - 1];
+    if(update.max < arr[arr.length - 1]){
+        update.max = arr[arr.length - 1];
     }
     var sum = 0;
     arr.forEach(e => {
         sum += e;
     });
-    update.setAvg = ((update.getAvg * update.getCount) + sum) / (update.getCount + arr.length);
-    update.setCount = update.getCount+arr.length;
-    changingNumbers(update.getMin);
+    update.avg = ((update.avg * update.count) + sum) / (update.count + arr.length);
+    update.count = update.count+arr.length;
+    changingNumbers(update.min);
 };
 
 //function to change updated values of min, max and avg in the DOM
@@ -136,8 +103,8 @@ function changingNumbers(min){
     setTimeout(function(){
         clearInterval(id);
         document.getElementById('minval').innerHTML = min.toFixed(2);
-        document.getElementById('maxval').innerHTML = update.getMax.toFixed(2);
-        document.getElementById('avgval').innerHTML = update.getAvg.toFixed(2);
+        document.getElementById('maxval').innerHTML = update.max.toFixed(2);
+        document.getElementById('avgval').innerHTML = update.avg.toFixed(2);
     },300);
 }
 
