@@ -1,5 +1,8 @@
 var min=Number.POSITIVE_INFINITY, max=0, avg=0, count=0;
 
+//function call for onclick of submit button. This is the entry point of the program.
+//taking array of numbers from input fields and saving into 'values' array
+//validating inputs for null values and not a number values before passing to function 'updateArray'
 function change(){
     var arr = document.querySelectorAll('input');
     var values = [];
@@ -16,6 +19,8 @@ function change(){
     }
 }
 
+//reset onclick event to reset min, max, avg and count values
+//passing pseudo value of 0 for min whereas it is set to positive infinity
 function reset(){
     min=Number.POSITIVE_INFINITY;
     max=0;
@@ -24,6 +29,7 @@ function reset(){
     changingNumbers(0);
 }
 
+//validating if a value other than number is supplied as an input
 function notANumber(values){
     var flag = false;
     values.forEach(e => {
@@ -34,6 +40,7 @@ function notANumber(values){
     return flag;
 }
 
+//function to update min, max, avg and count based on number supplied
 /*function updateNumber(num){
     console.time("time");
     count++;
@@ -48,8 +55,9 @@ function notANumber(values){
     console.timeEnd("time");
 };*/
 
+//function to update min, max, avg and count based on array of numbers supplied
 function updateArray(arr){
-    console.time("time");
+    //sorting array in ascending order to get min and max
     arr.sort(function(a,b){return a-b});
     if(min > arr[0]){
         min = arr[0];
@@ -64,10 +72,11 @@ function updateArray(arr){
     avg = ((avg * count) + sum) / (count + arr.length);
     count += arr.length;
     changingNumbers(min);
-    console.timeEnd("time");
 };
 
+//function to change updated values of min, max and avg in the DOM
 function changingNumbers(min){
+    //small animation of randomly changing numbers every 30ms before displaying resulted values
     var id = setInterval(() => {
         document.getElementById('minval').innerHTML = (100* Math.random()).toFixed(2);
         document.getElementById('maxval').innerHTML = (100* Math.random()).toFixed(2);
@@ -81,6 +90,7 @@ function changingNumbers(min){
     },300);
 }
 
+//function to add new entry field, activates on click of + button
 function newEntryField(i){
     document.getElementById(`option${i}`).innerHTML = '-';
     document.getElementById(`option${i}`).setAttribute('onClick', `deleteEntryField(${i})`);
@@ -88,6 +98,7 @@ function newEntryField(i){
     document.getElementById('entries').appendChild(newEntry(i));
 }
 
+//function returning a DOM element of new input field with + button
 function newEntry(i) {
     var newBtn = document.createElement('div');
     newBtn.setAttribute('id', `entry${i}`);
@@ -104,6 +115,7 @@ function newEntry(i) {
     return newBtn;
 }
 
+//function to delete DOM element of input field, activates on click of - button
 function deleteEntryField(i){
     document.getElementById(`entry${i}`).remove();
 }
