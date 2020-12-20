@@ -8,3 +8,4 @@ You can run index.html in any of the folders to run the app.
 
 App in two different folders is the same, I have just tried two different style of code.
 
+![plot](./App_Screenshot.png)
