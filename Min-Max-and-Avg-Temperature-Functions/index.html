@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css"/>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <header>Calculating Minimum, Maximum and Average Temperature</header>
+    <div id="flex">
+        <div id="input">
+            <div id="entries">
+                <div id="entry1">
+                    <input type="text" id="input1" placeholder="Enter Temperature Value"/>
+                    <button id="option1" onclick="newEntryField(1)">+</button>
+                </div>
+            </div>
+            <div id="controls">
+                <button id="submit" type="submit" onclick="change()">Submit</button>
+                <button id="reset" type="submit" onclick="reset()">Reset</button>
+            </div>
+        </div>
+        <div id="result">
+            <div id="min">
+                <div>Minimum</div>
+                <div id="minval">0</div>
+            </div>
+            <div id="max">
+                <div>Maximum</div>
+                <div id="maxval">0</div>
+            </div>
+            <div id="avg">
+                <div>Average</div>
+                <div id="avgval">0</div>
+            </div>
+        </div>
+    </div>
+    <footer><a href="https://github.com/devaniketjadhav/Min-Max-and-Avg-Temperature">@Aniket Jadhav</a></footer>
+</body>
+</html>
